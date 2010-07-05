@@ -1,0 +1,20 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0" is_locked="false">
+    <option name="myName" value="Project Default" />
+    <option name="myLocal" value="false" />
+    <inspection_tool class="ExceptionFromCatchWhichDoesntWrap" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoreGetMessage" value="false" />
+    </inspection_tool>
+    <inspection_tool class="ThrowCaughtLocally" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoreRethrownExceptions" value="false" />
+    </inspection_tool>
+    <inspection_tool class="TooBroadScope" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="m_allowConstructorAsInitializer" value="false" />
+      <option name="m_onlyLookAtBlocks" value="false" />
+    </inspection_tool>
+    <inspection_tool class="UnusedCatchParameter" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="m_ignoreCatchBlocksWithComments" value="false" />
+      <option name="m_ignoreTestCases" value="false" />
+    </inspection_tool>
+  </profile>
+</component>
