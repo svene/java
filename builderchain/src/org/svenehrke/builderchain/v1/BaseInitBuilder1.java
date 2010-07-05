@@ -2,7 +2,7 @@
  * Copyright (c) 2010 by Sven Ehrke
  */
 
-package org.svenehrke.builderchain.common;
+package org.svenehrke.builderchain.v1;
 
 public class BaseInitBuilder1<D, NB extends BaseInitBuilder1<D, ?>> {
 	protected final D data;
