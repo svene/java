@@ -8,9 +8,6 @@ package org.svenehrke.builderchain.v3;
  * Same as 'NutritionFacts3a' but using directly 'initServingSize()' instead of 'newBuilder()'. 
  */
 class NutritionFacts3b {
-//
-/**/
-
 
 	private final Data data;
 
