@@ -1,0 +1,37 @@
+Example for more complex requirement: several paths exist to construct resulting object:
+
+
+- use interface for final builder:
+	public static interface IFinalBuilder {
+		public V4 build();
+		V4Data getData();
+	}
+(Note: you can generify this class by introducing generic parameters for V4 and V4Data, but I think it is not really worth the price)
+
+
+- use default implementation (DFB) for IFinalBuilder:
+	public static class V4FinalBuilder implements IFinalBuilder<V4Data, V4> {
+		private final V4Data data;
+
+		public V4FinalBuilder(V4Data aData) {
+			data = aData;
+		}
+
+		public V4 build() {
+			return new V4(this);
+		}
+
+		public V4Data getData() {
+			return data;
+		}
+	}
+
+PLP: possible leaf property p1 (optional property with no following properties or all following properties are optional):
+    ~> p1
+    -> p1 ~> p2
+
+DLP: definite leaf property p1 (not optional and no following properties):
+    -> p1
+
+- if a builder routine constructs a PLP it should return a subclass of the DFB implementing the further builder routines
+- if a builder routine constructs a DLP it should return the DFB as an IFinalBuilder

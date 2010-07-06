@@ -63,7 +63,7 @@ class NutritionFacts3b {
 		}
 	}
 
-	private NutritionFacts3b(IOptionalBuilder aBuilder) {
+	private NutritionFacts3b(IOptionsBuilder aBuilder) {
 		data = aBuilder.getData();
 	}
 
@@ -72,22 +72,22 @@ class NutritionFacts3b {
 		final Data data = new Data();
 		data.servingSize = value;
 		return new IServings() {
-			public IOptionalBuilder initServings(int value) {
+			public IOptionsBuilder initServings(int value) {
 				data.servings = value;
-				return new IOptionalBuilder() {
-					public IOptionalBuilder withCalories(int value) {
+				return new IOptionsBuilder() {
+					public IOptionsBuilder withCalories(int value) {
 						data.calories = value;
 						return this;
 					}
-					public IOptionalBuilder withFat(int value) {
+					public IOptionsBuilder withFat(int value) {
 						data.fat = value;
 						return this;
 					}
-					public IOptionalBuilder withSodium(int value) {
+					public IOptionsBuilder withSodium(int value) {
 						data.sodium = value;
 						return this;
 					}
-					public IOptionalBuilder withCarbohydrate(int value) {
+					public IOptionsBuilder withCarbohydrate(int value) {
 						data.carbohydrate = value;
 						return this;
 					}
@@ -146,14 +146,14 @@ class NutritionFacts3b {
 	}
 
 	public static interface IServings {
-		public IOptionalBuilder initServings(int value);
+		public IOptionsBuilder initServings(int value);
 	}
 
-	public static interface IOptionalBuilder {
-		public IOptionalBuilder withCalories(int value);
-		public IOptionalBuilder withFat(int value);
-		public IOptionalBuilder withSodium(int value);
-		public IOptionalBuilder withCarbohydrate(int value);
+	public static interface IOptionsBuilder {
+		public IOptionsBuilder withCalories(int value);
+		public IOptionsBuilder withFat(int value);
+		public IOptionsBuilder withSodium(int value);
+		public IOptionsBuilder withCarbohydrate(int value);
 		public NutritionFacts3b build();
 
 		Data getData();

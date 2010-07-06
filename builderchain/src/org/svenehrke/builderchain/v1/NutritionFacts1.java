@@ -4,8 +4,6 @@
 
 package org.svenehrke.builderchain.v1;
 
-import org.svenehrke.builderchain.common.BaseInitBuilder1;
-
 class NutritionFacts1 {
 	private final Data data;
 

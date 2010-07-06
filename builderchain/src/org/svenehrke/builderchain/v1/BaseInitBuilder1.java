@@ -4,7 +4,7 @@
 
 package org.svenehrke.builderchain.v1;
 
-public class BaseInitBuilder1<D, NB extends BaseInitBuilder1<D, ?>> {
+class BaseInitBuilder1<D, NB extends BaseInitBuilder1<D, ?>> {
 	protected final D data;
 	protected final NB nextBuilder;
 

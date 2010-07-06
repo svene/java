@@ -95,7 +95,7 @@ class NutritionFacts2 {
 			data = aData;
 			nb = aNextBuilder;
 		}
-		public IOptionalBuilder initServings(int aValue) {
+		public IOptionsBuilder initServings(int aValue) {
 			nb.data.servings = aValue;
 			return nb;
 		}
@@ -104,7 +104,7 @@ class NutritionFacts2 {
 		}
 	}
 
-	public static class FinalBuilder implements IOptionalBuilder {
+	public static class FinalBuilder implements IOptionsBuilder {
 		private Data data;
 		private FinalBuilder(Data aData) {
 			data = aData;
@@ -176,18 +176,18 @@ class NutritionFacts2 {
 	}
 
 	public static interface IServings {
-		public IOptionalBuilder initServings(int value);
+		public IOptionsBuilder initServings(int value);
 	}
 
 	public static interface IServingSize {
 		public IServings initServingSize(int value);
 	}
 
-	public static interface IOptionalBuilder {
-		public IOptionalBuilder withCalories(int value);
-		public IOptionalBuilder withFat(int value);
-		public IOptionalBuilder withSodium(int value);
-		public IOptionalBuilder withCarbohydrate(int value);
+	public static interface IOptionsBuilder {
+		public IOptionsBuilder withCalories(int value);
+		public IOptionsBuilder withFat(int value);
+		public IOptionsBuilder withSodium(int value);
+		public IOptionsBuilder withCarbohydrate(int value);
 		public NutritionFacts2 build();
 	}
 }
