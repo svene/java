@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/builderchain/Builderchain.iml" filepath="$PROJECT_DIR$/builderchain/Builderchain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/effectivejava2nd/effectivejava2nd.iml" filepath="$PROJECT_DIR$/effectivejava2nd/effectivejava2nd.iml" />
     </modules>
   </component>
 </project>
