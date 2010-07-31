@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/builderchain/Builderchain.iml" filepath="$PROJECT_DIR$/builderchain/Builderchain.iml" />
       <module fileurl="file://$PROJECT_DIR$/effectivejava2nd/effectivejava2nd.iml" filepath="$PROJECT_DIR$/effectivejava2nd/effectivejava2nd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/misc/misc.iml" filepath="$PROJECT_DIR$/misc/misc.iml" />
     </modules>
   </component>
 </project>
