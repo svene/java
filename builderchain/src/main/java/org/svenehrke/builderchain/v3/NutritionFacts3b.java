@@ -65,10 +65,10 @@ class NutritionFacts3b {
 	}
 
 	// ------------------------
-	public static IServings initServingSize(int value) {
+	public static IBuilder1 initServingSize(int value) {
 		final Data data = new Data();
 		data.servingSize = value;
-		return new IServings() {
+		return new IBuilder1() {
 			public IOptionsBuilder initServings(int value) {
 				data.servings = value;
 				return new IOptionsBuilder() {
@@ -142,7 +142,7 @@ class NutritionFacts3b {
 			'}';
 	}
 
-	public static interface IServings {
+	public static interface IBuilder1 {
 		public IOptionsBuilder initServings(int value);
 	}
 
