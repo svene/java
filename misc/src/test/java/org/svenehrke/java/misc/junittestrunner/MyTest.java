@@ -1,12 +1,14 @@
 package org.svenehrke.java.misc.junittestrunner;
 
-import org.junit.Test;
 import org.junit.runner.Description;
 import org.junit.runner.RunWith;
 import org.junit.runner.Runner;
 import org.junit.runner.notification.Failure;
 import org.junit.runner.notification.RunNotifier;
 
+/**
+ * see http://wotiamfinking.blogspot.com/2008/09/write-your-own-junit-runner.html
+ */
 @RunWith(MyTest.MyTestRunner.class)
 public class MyTest {
 
