@@ -1,5 +1,8 @@
 package org.svenehrke.builderchain.v4;
 
+/**
+ * Example for different costruction paths
+ */
 public class V4 {
 
 	private final V4Data data;
@@ -28,12 +31,12 @@ public class V4 {
 		private int p7;
 	}
 
-	public static V4_B1a initP1(final int aValue) {
+	public static V4_B1a withP1(final int aValue) {
 		final V4Data data = new V4Data();
 		data.p1 = aValue;
 		return new V4_B1a() {
 
-			public V4_B1b initP3(int aValue) {
+			public V4_B1b withP3(int aValue) {
 				data.p3 = aValue;
 				return new V4_B1b(data) {
 					public V4_B1b withP4a(int aValue) {
@@ -93,7 +96,7 @@ public class V4 {
 	}
 
 	public static interface V4_B1a {
-		public V4_B1b initP3(final int aValue);
+		public V4_B1b withP3(final int aValue);
 	}
 
 	public static abstract class V4_B1b extends V4FinalBuilder {

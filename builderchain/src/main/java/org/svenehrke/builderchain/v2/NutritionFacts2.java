@@ -5,9 +5,6 @@
 package org.svenehrke.builderchain.v2;
 
 class NutritionFacts2 {
-//
-/**/
-
 
 	private final Data data;
 
@@ -71,7 +68,7 @@ class NutritionFacts2 {
 	}
 
 /*
-	public static IServings initServingSize(int aServingSize) {
+	public static IServings withServingSize(int aServingSize) {
 		d.servingSize = aServingSize;
 		return new B2(new FinalBuilder(d));
 	}
@@ -82,7 +79,7 @@ class NutritionFacts2 {
 		private B1(final B2 aNextBuilder) {
 			nb = aNextBuilder;
 		}
-		public IServings initServingSize(int aValue) {
+		public IServings withServingSize(int aValue) {
 			nb.data.servingSize = aValue;
 			return nb;
 		}
@@ -95,7 +92,7 @@ class NutritionFacts2 {
 			data = aData;
 			nb = aNextBuilder;
 		}
-		public IOptionsBuilder initServings(int aValue) {
+		public IOptionsBuilder withServings(int aValue) {
 			nb.data.servings = aValue;
 			return nb;
 		}
@@ -110,19 +107,19 @@ class NutritionFacts2 {
 			data = aData;
 		}
 
-		public FinalBuilder withCalories(final int aCalories) {
+		public FinalBuilder andCalories(final int aCalories) {
 			data.calories = aCalories;
 			return this;
 		}
-		public FinalBuilder withFat(final int aFat) {
+		public FinalBuilder andFat(final int aFat) {
 			data.fat = aFat;
 			return this;
 		}
-		public FinalBuilder withSodium(final int aSodium) {
+		public FinalBuilder andSodium(final int aSodium) {
 			data.sodium = aSodium;
 			return this;
 		}
-		public FinalBuilder withCarbohydrate(final int aCarbohydrate) {
+		public FinalBuilder andCarbohydrate(final int aCarbohydrate) {
 			data.carbohydrate = aCarbohydrate;
 			return this;
 		}
@@ -176,18 +173,18 @@ class NutritionFacts2 {
 	}
 
 	public static interface IServings {
-		public IOptionsBuilder initServings(int value);
+		public IOptionsBuilder withServings(int value);
 	}
 
 	public static interface IServingSize {
-		public IServings initServingSize(int value);
+		public IServings withServingSize(int value);
 	}
 
 	public static interface IOptionsBuilder {
-		public IOptionsBuilder withCalories(int value);
-		public IOptionsBuilder withFat(int value);
-		public IOptionsBuilder withSodium(int value);
-		public IOptionsBuilder withCarbohydrate(int value);
+		public IOptionsBuilder andCalories(int value);
+		public IOptionsBuilder andFat(int value);
+		public IOptionsBuilder andSodium(int value);
+		public IOptionsBuilder andCarbohydrate(int value);
 		public NutritionFacts2 build();
 	}
 }

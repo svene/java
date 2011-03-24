@@ -15,14 +15,16 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 import org.svenehrke.builderchain.v3.NutritionFacts3cTest;
+import org.svenehrke.builderchain.v4.V4Test;
 
 @RunWith(Suite.class)
 @SuiteClasses( {
-	NutritionFacts1Test.class,
-	NutritionFacts2Test.class,
-	NutritionFacts3aTest.class,
-	NutritionFacts3bTest.class,
-	NutritionFacts3cTest.class
+	NutritionFacts1Test.class
+	, NutritionFacts2Test.class
+	, NutritionFacts3aTest.class
+	, NutritionFacts3bTest.class
+	, NutritionFacts3cTest.class
+	, V4Test.class
 	})
 
 public class AllTests {

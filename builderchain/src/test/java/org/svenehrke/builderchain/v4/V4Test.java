@@ -9,8 +9,8 @@ public class V4Test {
 	@Test
 	public void testP1_P3() {
 		V4 v4 = V4
-			.initP1(1)
-			.initP3(2)
+			.withP1(1)
+			.withP3(2)
 			.build();
 
 		assertNotNull(v4);
@@ -26,7 +26,7 @@ public class V4Test {
 
 	@Test
 	public void testP1_P3_P4a() {
-		V4 v4 = V4.initP1(1).initP3(2).withP4a(41).build();
+		V4 v4 = V4.withP1(1).withP3(2).withP4a(41).build();
 
 		assertNotNull(v4);
 		assertEquals(1, v4.getP1());
@@ -41,7 +41,7 @@ public class V4Test {
 
 	@Test
 	public void testP1_P3_P4b() {
-		V4 v4 = V4.initP1(1).initP3(2).withP4b(42).build();
+		V4 v4 = V4.withP1(1).withP3(2).withP4b(42).build();
 
 		assertNotNull(v4);
 		assertEquals(1, v4.getP1());
@@ -51,7 +51,7 @@ public class V4Test {
 
 	@Test
 	public void testP1_P3_P4a_P4b() {
-		V4 v4 = V4.initP1(1).initP3(2).withP4a(41).withP4b(42).build();
+		V4 v4 = V4.withP1(1).withP3(2).withP4a(41).withP4b(42).build();
 
 		assertNotNull(v4);
 		assertEquals(1, v4.getP1());
@@ -62,7 +62,7 @@ public class V4Test {
 
 	@Test
 	public void testP1_P3_P4a_P4b_P5_P6() {
-		V4 v4 = V4.initP1(1).initP3(2).withP4a(41).withP4b(42).withP5(5).initP6(6).build();
+		V4 v4 = V4.withP1(1).withP3(2).withP4a(41).withP4b(42).withP5(5).initP6(6).build();
 
 		assertNotNull(v4);
 		assertEquals(1, v4.getP1());

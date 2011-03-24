@@ -48,27 +48,17 @@ class NutritionFacts1 {
 		data = aBuilder.getData();
 	}
 
-	public static B2 initServingSize(int aServingSize) {
+	public static B1 withServingSize(int aServingSize) {
 		Data d = new Data();
 		d.servingSize = aServingSize;
-		return new B2(new FinalBuilder(d));
+		return new B1(new FinalBuilder(d));
 	}
 
-	public static class B1 extends BaseInitBuilder1<Data, B2> {
-		private B1(final B2 aNextBuilder) {
+	public static class B1 extends BaseInitBuilder1<Data, FinalBuilder> {
+		private B1(final FinalBuilder aNextBuilder) {
 			super(aNextBuilder);
 		}
-		public B2 initServingSize(int aServingSize) {
-			data.servingSize = aServingSize;
-			return nextBuilder;
-		}
-	}
-
-	public static class B2 extends BaseInitBuilder1<Data, FinalBuilder> {
-		private B2(final FinalBuilder aNextBuilder) {
-			super(aNextBuilder);
-		}
-		public FinalBuilder initServings(int aServings) {
+		public FinalBuilder withServings(int aServings) {
 			//todo: think about:
 			// return super.setValue(int)
 			data.servings = aServings;
@@ -81,19 +71,19 @@ class NutritionFacts1 {
 			super(aData);
 		}
 
-		public FinalBuilder withCalories(final int aCalories) {
+		public FinalBuilder andCalories(final int aCalories) {
 			data.calories = aCalories;
 			return this;
 		}
-		public FinalBuilder withFat(final int aFat) {
+		public FinalBuilder andFat(final int aFat) {
 			data.fat = aFat;
 			return this;
 		}
-		public FinalBuilder withSodium(final int aSodium) {
+		public FinalBuilder andSodium(final int aSodium) {
 			data.sodium = aSodium;
 			return this;
 		}
-		public FinalBuilder withCarbohydrate(final int aCarbohydrate) {
+		public FinalBuilder andCarbohydrate(final int aCarbohydrate) {
 			data.carbohydrate = aCarbohydrate;
 			return this;
 		}

@@ -5,7 +5,7 @@
 package org.svenehrke.builderchain.v3;
 
 /**
- * Same as 'NutritionFacts3a' but using directly 'initServingSize()' instead of 'newBuilder()'. 
+ * Same as 'NutritionFacts3a' but using directly 'withServingSize()' instead of 'newBuilder()'.
  */
 class NutritionFacts3b {
 
@@ -65,26 +65,26 @@ class NutritionFacts3b {
 	}
 
 	// ------------------------
-	public static IBuilder1 initServingSize(int value) {
+	public static IBuilder1 withServingSize(int value) {
 		final Data data = new Data();
 		data.servingSize = value;
 		return new IBuilder1() {
-			public IOptionsBuilder initServings(int value) {
+			public IOptionsBuilder withServings(int value) {
 				data.servings = value;
 				return new IOptionsBuilder() {
-					public IOptionsBuilder withCalories(int value) {
+					public IOptionsBuilder andCalories(int value) {
 						data.calories = value;
 						return this;
 					}
-					public IOptionsBuilder withFat(int value) {
+					public IOptionsBuilder andFat(int value) {
 						data.fat = value;
 						return this;
 					}
-					public IOptionsBuilder withSodium(int value) {
+					public IOptionsBuilder andSodium(int value) {
 						data.sodium = value;
 						return this;
 					}
-					public IOptionsBuilder withCarbohydrate(int value) {
+					public IOptionsBuilder andCarbohydrate(int value) {
 						data.carbohydrate = value;
 						return this;
 					}
@@ -143,14 +143,14 @@ class NutritionFacts3b {
 	}
 
 	public static interface IBuilder1 {
-		public IOptionsBuilder initServings(int value);
+		public IOptionsBuilder withServings(int value);
 	}
 
 	public static interface IOptionsBuilder {
-		public IOptionsBuilder withCalories(int value);
-		public IOptionsBuilder withFat(int value);
-		public IOptionsBuilder withSodium(int value);
-		public IOptionsBuilder withCarbohydrate(int value);
+		public IOptionsBuilder andCalories(int value);
+		public IOptionsBuilder andFat(int value);
+		public IOptionsBuilder andSodium(int value);
+		public IOptionsBuilder andCarbohydrate(int value);
 		public NutritionFacts3b build();
 
 		Data getData();

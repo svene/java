@@ -5,12 +5,9 @@
 package org.svenehrke.builderchain.v3;
 
 /**
- * Example for builder pattern with inner classes to construct builder  chain.
+ * Example for builder pattern with inner classes to construct builder chain.
  */
 class NutritionFacts3a {
-//
-/**/
-
 
 	private final Data data;
 
@@ -71,25 +68,25 @@ class NutritionFacts3a {
 	public static IServingSize newBuilder() {
 		final Data data = new Data();
 		return new IServingSize() {
-			public IServings initServingSize(int value) {
+			public IServings withServingSize(int value) {
 				data.servingSize = value;
 				return new IServings() {
-					public IOptionalBuilder initServings(int value) {
+					public IOptionalBuilder withServings(int value) {
 						data.servings = value;
 						return new IOptionalBuilder() {
-							public IOptionalBuilder withCalories(int value) {
+							public IOptionalBuilder andCalories(int value) {
 								data.calories = value;
 								return this;
 							}
-							public IOptionalBuilder withFat(int value) {
+							public IOptionalBuilder andFat(int value) {
 								data.fat = value;
 								return this;
 							}
-							public IOptionalBuilder withSodium(int value) {
+							public IOptionalBuilder andSodium(int value) {
 								data.sodium = value;
 								return this;
 							}
-							public IOptionalBuilder withCarbohydrate(int value) {
+							public IOptionalBuilder andCarbohydrate(int value) {
 								data.carbohydrate = value;
 								return this;
 							}
@@ -151,18 +148,18 @@ class NutritionFacts3a {
 	}
 
 	public static interface IServings {
-		public IOptionalBuilder initServings(int value);
+		public IOptionalBuilder withServings(int value);
 	}
 
 	public static interface IServingSize {
-		public IServings initServingSize(int value);
+		public IServings withServingSize(int value);
 	}
 
 	public static interface IOptionalBuilder {
-		public IOptionalBuilder withCalories(int value);
-		public IOptionalBuilder withFat(int value);
-		public IOptionalBuilder withSodium(int value);
-		public IOptionalBuilder withCarbohydrate(int value);
+		public IOptionalBuilder andCalories(int value);
+		public IOptionalBuilder andFat(int value);
+		public IOptionalBuilder andSodium(int value);
+		public IOptionalBuilder andCarbohydrate(int value);
 		public NutritionFacts3a build();
 
 		Data getData();

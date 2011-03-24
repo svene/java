@@ -14,12 +14,12 @@ public class NutritionFacts3cTest {
 	@Test
 	public void test1() {
 		NutritionFacts3c nf1 = NutritionFacts3c
-			.initServingSize(20)
-			.initServings(30)
-			.withCalories(1200)
-			.withFat(20)
-			.withSodium(123)
-			.withCarbohydrate(200).build();
+			.withServingSize(20)
+			.withServings(30)
+			.andCalories(1200)
+			.andFat(20)
+			.andSodium(123)
+			.andCarbohydrate(200).build();
 
 		assertEquals(20, nf1.getServingsSize());
 		assertEquals(30, nf1.getServings());
@@ -29,12 +29,12 @@ public class NutritionFacts3cTest {
 		assertEquals(200, nf1.getCarbohydrate());
 
 		NutritionFacts3c nf2 = NutritionFacts3c
-			.initServingSize(20)
-			.initServings(30)
-			.withCalories(1200)
-			.withFat(20)
-			.withSodium(123)
-			.withCarbohydrate(200).build();
+			.withServingSize(20)
+			.withServings(30)
+			.andCalories(1200)
+			.andFat(20)
+			.andSodium(123)
+			.andCarbohydrate(200).build();
 
 		assertEquals(nf1.getServingsSize(), nf2.getServingsSize());
 		assertEquals(nf1.getServings(), nf2.getServings());
