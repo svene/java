@@ -48,12 +48,6 @@ class NutritionFacts1 {
 		data = aBuilder.getData();
 	}
 
-	@Deprecated // Use 'initServingSize(...)' instead
-	public static B1 newBuilder() {
-		return new B1(new B2(new FinalBuilder(new Data())));
-	}
-
-	// nicer compared to using 'newBuilder()':
 	public static B2 initServingSize(int aServingSize) {
 		Data d = new Data();
 		d.servingSize = aServingSize;

@@ -1,11 +1,10 @@
 /*
- * Copyright (c) 2010 by Sven Ehrke
+ * Copyright (c) 2010-2011 by Sven Ehrke
  */
 
 package org.svenehrke.builderchain.v1;
 
 import org.junit.Test;
-import org.svenehrke.builderchain.v1.NutritionFacts1;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotSame;
@@ -14,8 +13,7 @@ public class NutritionFacts1Test {
 
 	@Test
 	public void test1() {
-		NutritionFacts1 nf1 = NutritionFacts1.newBuilder()
-			.initServingSize(20)
+		NutritionFacts1 nf1 = NutritionFacts1.initServingSize(20)
 			.initServings(30)
 			.withCalories(1200)
 			.withFat(20)
