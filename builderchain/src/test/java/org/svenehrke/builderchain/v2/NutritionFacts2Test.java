@@ -13,7 +13,7 @@ public class NutritionFacts2Test {
 
 	@Test
 	public void test1() {
-		NutritionFacts2 nf1 = NutritionFacts2.newBuilder()
+		NutritionFacts2 nf1 = NutritionFacts2
 			.withServingSize(20)
 			.withServings(30)
 			.andCalories(1200)
@@ -28,7 +28,7 @@ public class NutritionFacts2Test {
 		assertEquals(123, nf1.getSodium());
 		assertEquals(200, nf1.getCarbohydrate());
 
-		NutritionFacts2 nf2 = NutritionFacts2.newBuilder()
+		NutritionFacts2 nf2 = NutritionFacts2
 			.withServingSize(20)
 			.withServings(30)
 			.andCalories(1200)

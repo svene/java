@@ -4,6 +4,9 @@
 
 package org.svenehrke.builderchain.v2;
 
+/**
+ * Similar to NutritionFacts1 but using interfaces (IServings, IOptionsBuilder)
+ */
 class NutritionFacts2 {
 
 	private final Data data;
@@ -62,33 +65,16 @@ class NutritionFacts2 {
 	}
 
 	// ------------------------
-	public static IServingSize newBuilder() {
-		Data data = new Data();
-		return new B1(new B2(data, new FinalBuilder(data)));
-	}
-
-/*
 	public static IServings withServingSize(int aServingSize) {
+		Data d = new Data();
 		d.servingSize = aServingSize;
-		return new B2(new FinalBuilder(d));
-	}
-*/
-
-	public static class B1 implements IServingSize {
-		final B2 nb;
-		private B1(final B2 aNextBuilder) {
-			nb = aNextBuilder;
-		}
-		public IServings withServingSize(int aValue) {
-			nb.data.servingSize = aValue;
-			return nb;
-		}
+		return new B1(d, new FinalBuilder(d));
 	}
 
-	public static class B2 implements IServings {
+	public static class B1 implements IServings {
 		final private Data data;
 		final FinalBuilder nb;
-		private B2(final Data aData, final FinalBuilder aNextBuilder) {
+		private B1(final Data aData, final FinalBuilder aNextBuilder) {
 			data = aData;
 			nb = aNextBuilder;
 		}
@@ -174,10 +160,6 @@ class NutritionFacts2 {
 
 	public static interface IServings {
 		public IOptionsBuilder withServings(int value);
-	}
-
-	public static interface IServingSize {
-		public IServings withServingSize(int value);
 	}
 
 	public static interface IOptionsBuilder {

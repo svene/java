@@ -5,7 +5,7 @@
 package org.svenehrke.builderchain.v3;
 
 /**
- * Same as 'NutritionFacts3a' but using directly 'withServingSize()' instead of 'newBuilder()'.
+ * Also using interfaces but using anonymous inner classes for their implementation.
  */
 class NutritionFacts3b {
 
