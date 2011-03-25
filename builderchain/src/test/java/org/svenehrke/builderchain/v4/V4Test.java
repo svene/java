@@ -106,22 +106,4 @@ public class V4Test {
 		assertEquals(7, v4.getP7());
 	}
 
-	@Test
-	public void test1() {
-// Quick Switch Line Comment (comment/uncommented with one slash: remove 2nd slash on following line (and then add it again)):
-/**/ System.out.println("hello");//*/
-	System.out.println("hello world");
-
-
-
-// Quick Switch Block Comment (comment/uncommented with one slash: remove 2nd slash on following line (and then add it again)):
-/**
- System.out.println("hello");
- System.out.println("world");
-//*/
-		System.out.println("hello world");
-
-	}
-
-
 }
