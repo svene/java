@@ -1,23 +1,17 @@
-
 apply plugin: 'java'
+apply plugin: 'groovy'
 
 repositories {
     mavenCentral()
+	mavenRepo urls: "http://m2repo.spockframework.org/snapshots"
 }
 
 dependencies {
-	testCompile 'junit:junit:4.+'
+	groovy 'org.codehaus.groovy:groovy:1.7.8'
+
+	testCompile 'junit:junit:4.8'
+	testCompile "org.spockframework:spock-core:0.5-groovy-1.7"
 }
 
-sourceCompatibility = 1.5
+sourceCompatibility = 1.6
 version = '1.0'
-manifest.mainAttributes(
-	'Implementation-Title': 'Gradle Quickstart',
-	'Implementation-Version': version
-)
-
-uploadArchives {
-    repositories {
-       flatDir(dirs: file('repos'))
-    }
-}
