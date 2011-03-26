@@ -23,7 +23,7 @@ class ProductSpockTest extends Specification {
 	def "verify that builder works with required and optional arguments"() {
 		given:
 		when:
-			Product p = Product.withRequired1("r1").withRequired2("r2").withRequired3("r3").andOptional1("o1").andOptional2("o2").andOptional3("o3").build()
+			Product p = Product.withRequired1("r1").withRequired2("r2").withRequired3("r3").setOptional1("o1").setOptional2("o2").setOptional3("o3").build()
 		then:
 			"r1" == p.getRequired1()
 			"r2" == p.getRequired2()
@@ -36,7 +36,7 @@ class ProductSpockTest extends Specification {
 	def "verify that invalid construction paths would not be compilable under Java"() {
 		given:
 		when:
-			Product.andOptional1("o1").build()
+			Product.setOptional1("o1").build()
 		then:
 			thrown(MissingMethodException)
 
