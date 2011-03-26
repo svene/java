@@ -1,29 +1,19 @@
 package org.svenehrke.builderchain.p;
 
 public class Product {
-	final ProductData data;
+	private final ProductData data;
 
 	private Product(ProductData aData) {
 		data = aData;
 	}
 
-	public IOptionsBuilder newInitializedBuilder() {
-		return Product
-			.withRequired1(getRequired1())
-			.withRequired2(getRequired2())
-			.withRequired3(getRequired3())
-			.setOptional1(getOptional1())
-			.setOptional2(getRequired2())
-			.setOptional3(getOptional3());
-	}
-
-	public static IBuilder2 withRequired1(String value) {
+	public static IBuilder1 withRequired1(String value) {
 		final ProductData data = new ProductData();
 		data.required1 = value;
-		return new IBuilder2() {
-			public IBuilder3 withRequired2(String value) {
+		return new IBuilder1() {
+			public IBuilder2 withRequired2(String value) {
 				data.required2 = value;
-				return new IBuilder3() {
+				return new IBuilder2() {
 					public IOptionsBuilder withRequired3(String value) {
 						data.required3 = value;
 						return new IOptionsBuilder() {
@@ -51,6 +41,16 @@ public class Product {
 				};
 			}
 		};
+	}
+
+	public IOptionsBuilder newInitializedBuilder() {
+		return Product
+			.withRequired1(getRequired1())
+			.withRequired2(getRequired2())
+			.withRequired3(getRequired3())
+			.setOptional1(getOptional1())
+			.setOptional2(getOptional2())
+			.setOptional3(getOptional3());
 	}
 
 	public static interface IOptionsBuilder {
@@ -84,10 +84,10 @@ public class Product {
 		return data.optional3;
 	}
 
-	public static interface IBuilder2 {
-		public IBuilder3 withRequired2(String value);
+	public static interface IBuilder1 {
+		public IBuilder2 withRequired2(String value);
 	}
-	public static interface IBuilder3 {
+	public static interface IBuilder2 {
 		public IOptionsBuilder withRequired3(String value);
 	}
 
