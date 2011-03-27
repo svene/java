@@ -6,6 +6,10 @@
 
 package org.svenehrke.builderchain;
 
+import org.svenehrke.builderchain.p.ProductTest;
+import org.svenehrke.builderchain.p.ProductWithOptionsOnly;
+import org.svenehrke.builderchain.p.ProductWithOptionsOnlyTest;
+import org.svenehrke.builderchain.p.ProductWithRequiredsOnlyTest;
 import org.svenehrke.builderchain.v1.NutritionFacts1Test;
 import org.svenehrke.builderchain.v2.NutritionFacts2Test;
 import org.svenehrke.builderchain.v3.NutritionFacts3bTest;
@@ -23,6 +27,9 @@ import org.svenehrke.builderchain.v4.V4Test;
 	, NutritionFacts3bTest.class
 	, NutritionFacts3cTest.class
 	, V4Test.class
+	, ProductTest.class
+	, ProductWithOptionsOnlyTest.class
+	, ProductWithRequiredsOnlyTest.class
 	})
 
 public class AllTests {
