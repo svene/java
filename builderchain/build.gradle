@@ -4,7 +4,7 @@ apply plugin: 'sonar'
 
 repositories {
     mavenCentral()
-	mavenRepo urls: "http://m2repo.spockframework.org/snapshots"
+	mavenRepo url: "http://m2repo.spockframework.org/snapshots"
 }
 
 dependencies {
