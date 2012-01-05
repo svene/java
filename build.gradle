@@ -1,3 +1,17 @@
+// see http://greggigon.com/2011/09/28/gradle-idea-plugin-configuration-and-usage/
+allprojects {
+	apply plugin: 'idea'
+	idea {
+		project {
+			jdkName = '1.6'
+		}
+		module {
+			downloadSources = false
+			downloadJavadoc = false
+		}
+	}
+}
+
 subprojects {
 	apply plugin: 'java'
 
@@ -6,6 +20,7 @@ subprojects {
 	}
 	dependencies {
 		testCompile 'junit:junit:4.8'
+		testCompile 'org.mockito:mockito-all:1.8.5'
 	}
 
 	sourceCompatibility = 1.6
